@@ -112,9 +112,9 @@ end
 until (over?(board)) do
   turn(board)
 end
-
-if (won?(board))
-  puts `Congratulations Player #{winner(board)}`
-else if (draw?(board))
-  puts "It was a draw"
-end
+def play(board)
+  if (won?(board))
+    puts `Congratulations Player #{winner(board)}`
+  else if (draw?(board))
+    puts "It was a draw"
+  end
