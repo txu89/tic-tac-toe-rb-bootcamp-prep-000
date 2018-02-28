@@ -60,3 +60,52 @@ end
 +  return counter
 +end
 
++def current_player(board)
++  counter = turn_count(board)
++  counter % 2 == 0 ? player = 'X' : player = 'O'
++end 
+
+def won?(board)
+  WIN_COMBINATIONS.each { | combination |
+    if (board[combination[0]] == board[combination[1]] && board[combination[1]] == board[combination[2]] && position_taken?(board, combination[0]))
+      return combination
+    end
+  }
+    
+  return FALSE
+end
+
+def full?(board)
+  board.each { | index |
+    if (index == " " || index == nil)
+      return FALSE
+    else
+      TRUE
+    end
+  }
+end
+
+def draw?(board)
+  if (full?(board) && !won?(board))
+    TRUE
+  else
+    FALSE
+  end
+end
+
+def over?(board)
+  if (won?(board) || draw?(board))
+    TRUE
+  else
+    FALSE
+  end
+end
+
+def winner(board)
+  if (won?(board))
+    return board[won?(board)[0]]
+  else
+    return nil
+  end
+end
+
