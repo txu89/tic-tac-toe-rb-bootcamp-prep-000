@@ -22,6 +22,7 @@ def input_to_index(entry)
 end
 
 def move(board, index, input="X")
+  input = current_player(board)
   board[index] = input
 end
 
