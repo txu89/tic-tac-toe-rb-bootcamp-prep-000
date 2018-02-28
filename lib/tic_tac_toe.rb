@@ -50,20 +50,20 @@ def turn(board)
   end
 end
 
-	+def turn_count(board) 
-+  counter = 0 
-+  board.each { | position |
-+    if (position == 'X' || position == 'O')
-+      counter += 1 
-+    end
-+  }
-+  return counter
-+end
+	def turn_count(board) 
+  counter = 0 
+  board.each { | position |
+    if (position == 'X' || position == 'O')
+      counter += 1 
+    end
+  }
+  return counter
+end
 
-+def current_player(board)
-+  counter = turn_count(board)
-+  counter % 2 == 0 ? player = 'X' : player = 'O'
-+end 
+def current_player(board)
+  counter = turn_count(board)
+  counter % 2 == 0 ? player = 'X' : player = 'O'
+end 
 
 def won?(board)
   WIN_COMBINATIONS.each { | combination |
@@ -109,7 +109,7 @@ def winner(board)
   end
 end
 
-until (over?(board))
+until (over?(board)) do
   turn(board)
 end
 
