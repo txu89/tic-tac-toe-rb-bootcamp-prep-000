@@ -109,9 +109,10 @@ def winner(board)
   end
 end
 
-until (over?(board)) do
+until (over?(board))
   turn(board)
 end
+
 def play(board)
   if (won?(board))
     puts `Congratulations Player #{winner(board)}`
